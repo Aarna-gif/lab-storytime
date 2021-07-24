@@ -1,138 +1,62 @@
-// Write your code on this file. Please don't change the existing code
-// unless absolutely needed.
+//Trial 1:
+//We've got some basic info about Karen's home
+//Debug the type of data provided
+//Return the types concatenated in a single variable
+function moreAboutHome(address, distanceFromTown, hasNeighbours){
+    return (typeof(address) + typeof(distanceFromTown) + typeof(hasNeighbours));
+    }
 
-//Initial price of the burger
-var wholeWheatBun = 10;
-
-//Ingredients of the burger along with the price
-// Clue: the name is same as the textcontent of the button. Will be useful later on :)
-var ingredients = {
-  Patty: 80,
-  Cheese: 10,
-  Tomatoes: 20,
-  Onions: 20,
-  Lettuce: 20
-};
-
-//Current state of the ingredients in the burger
-var state = {
-  Patty: true,
-  Cheese: true,
-  Tomatoes: true,
-  Onions: true,
-  Lettuce: true
-};
-
-// This function renders the entire screen everytime the state changes accordingly
-function renderAll() {
-  renderPatty();
-  renderCheese();
-  renderTomatoes();
-  renderOnions();
-  renderLettuce();
-  renderButtons();
-  renderIngredientsBoard();
-  renderPrice();
-}
-
-function renderPatty() {
-  let patty = document.querySelector("#patty");
-  //you can also use getElementById
-  if (state.Patty) {
-    patty.style.display = "inherit";
-  } else {
-    patty.style.display = "none";
-  }
-}
-
-function renderCheese() {
-  //Trial 1 - Change the visibility of cheese based on state by manipulating the DOM
-  let cheese = document.querySelector ("#cheese")
-  if(state.Cheese) {
-    cheese.style.display = "inherit" ;
-  }
-  else{
-    cheese.style.display = "none"
-  }
-}
-
-function renderTomatoes() {
-  //Trial 1 - Change the visibility of Tomatoes based on state by manipulating the DOM
-  let tomatoes = document.querySelector("#tomatoes");
-  if (state.Tomatoes) {
-    tomatoes.style.display = "inherit";
-  } else {
-    tomatoes.style.display = "none";
-  }
+//Trial 2:
+//Check if the data given is of the right type
+//parents = String, noOfSiblings = Number, isNuclearFamily = Boolean
+function moreAboutKaren(parents, noOfSiblings, isNuclearFamily){
+    if (typeof(parents) == "string" && typeof (noOfSiblings) == "number" && typeof (isNuclearFamily) == "boolean")
+    return true;
+    else
+    return false;
 }
 
 
 
-function renderOnions() {
-  //Trial 1 - Change the visibility of Onions based on state by manipulating the DOM
-  let onions = document.querySelector("#onions");
-  if (state.Onions) {
-    onions.style.display = "inherit";
-  } else {
-    onions.style.display = "none";
-  }
-}
+//Trial 3:
+//Lily is suspicious about Karen's new friend
+//Karen tells her friend's age and even writes it down
+//Check which one those is not a number (NaN) and return that value
+function doesFriendExist(ageInText, ageInNumber){
+    if(isNaN(ageInNumber))
+    return ageInNumber;
+    else if(isNaN(ageInText))
+    return ageInText;
+    }
 
-function renderLettuce() {
-  //Trial 1 - Change the visibility of Lettuce based on state by manipulating the DOM
-  let lettuce = document.querySelector("#lettuce");
-  if (state.Lettuce) {
-    lettuce.style.display = "inherit";
-  } else {
-    lettuce.style.display = "none";
-  }
-}
+//Trial 4:
+//Lily gave Karen x sweets
+//Karen ate y sweets herself
+//On her way to the river, she ate another z sweets every n meters travelled
+//Her friend divided the remaining sweets into 2 parts for each
+//How many sweets did her friend get to eat?
+function sweetTooth(totalNoOfSweets, sweetsConsumedByKaren, sweetsConsumedInNMeters, metersToTravel){
+    var remaining = (totalNoOfSweets - (sweetsConsumedByKaren + sweetsConsumedInNMeters * metersToTravel))/2;
+    return remaining;
+    }
 
+//Trial 5:
+//As Lily moves closer, it gets colder. She checks the temperature on her mobile
+//It only shows in fahrenheit. Convert the data to celsius and return it.
 
-document.querySelector(".btn-patty").onclick = function () {
-  state.Patty = !state.Patty;
-  renderAll();
-};
+//Trial 6:
+//Lily can now do multiple things to deal with this
+//1. Take her daughter to a doctor
+//2. Talk to her husband about it
+//3. Counsel her daughter herself
+//4. Lock her daughter in her room
+//Given a value, return which of these above actions Lily would take
 
-// Trial 2 - Setup event listener for the cheese button
-document.querySelector(".btn-cheese").onclick = function () {
-  state.Cheese = !state.Cheese;
-  renderAll();
-};
-
-
-
-
-// Trial 2 - Setup event listener for the tomatoes button
-document.querySelector(".btn-tomatoes").onclick = function () {
-  state.Tomatoes = !state.Tomatoes;
-  renderAll();
-};
-
-
-
-// Trial 2 - Setup event listener for the onion button
-document.querySelector(".btn-onion").onclick = function () {
-  state.Onion = !state.Onion;
-  renderAll();
-};
-
-
-
-// Trial 2 - Setup event listener for the lettuce button
-document.querySelector(".btn-lettuce").onclick = function () {
-  state.Lettuce = !state.Lettuce;
-  renderAll();
-};
-
-
-
-//Challenge 1 - Add/Remove the class active to the buttons based on state
-
-
-//Challenge 2 - Render only the items selected in the ingredients board based on the state
-
-
-//Judgement 1
-//In the p element having price-details as the class, display the calculated
-//price based on ingredients
+//Challenge 1:
+//Lily realized that she'd hurt her daughter
+//All she wants now is for her to stop crying
+//She refuses to talk to her but Lily doesn't stop trying
+//She tries out multiple things hoping for the best
+//Take all of Lily's strategies and concatenate them to a single var
+//Seperate the strategies by a single space
+//Return the length of the complete strategy
